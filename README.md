@@ -1,4 +1,4 @@
-<b>Auth0 Code Challenge</b>
+## Auth0 Code Challenge
 <p>
   This demo app demonstrates:
 </p>
