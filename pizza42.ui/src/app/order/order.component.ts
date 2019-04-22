@@ -60,7 +60,7 @@ export class OrderComponent implements OnInit {
       );
   }
 
-  private hasUserAccess() {
+  hasUserAccess() {
       return this.authService.userHasScope('create:orders');
   }
 }

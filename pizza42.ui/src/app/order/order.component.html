@@ -15,5 +15,5 @@
   </div>
 </div>
 <hr />
-<button [disabled]="!hasUserAccess() && !_order.selectedItem"   (click)="placeOrder(_order.selectedItem)">Order Now!</button>
+<button [disabled]="!hasUserAccess()"  *ngIf="_order.selectedItem" (click)="placeOrder(_order.selectedItem)">Order Now!</button>
 <small *ngIf="!hasUserAccess()"> * Please verify your email address to order</small>
