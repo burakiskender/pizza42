@@ -1,0 +1,30 @@
+<h2>My Profile</h2>
+<hr />
+<div class="row">
+  <div class="col-sm-4">
+    <img src="{{ userProfile?.picture }}" alt="" />
+  </div>
+
+  <div class="col-sm-8">
+    <div>
+    <h5> Nickname</h5>
+    <label>{{ userProfile?.nickname }}</label>
+  </div>
+  <div>
+    <h5> Email</h5>
+    <label>{{ userProfile?.email }}</label>
+  </div>
+  <div>
+    <h5> Google Connections:</h5>
+    <label>{{ userProfile? userProfile['https://mycustomdomain.com/googleConnections'] : '-' }} 
+      </label>
+  </div>
+    <div>
+      <h5> Gender</h5>
+      <label>{{ userProfile?.gender? userProfile?.gender : '-' }}</label>
+    </div>
+    <div>
+    <h5> Profile data</h5>
+    <pre>{{ userProfile | json }}</pre>
+  </div>
+</div>

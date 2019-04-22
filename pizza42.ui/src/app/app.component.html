@@ -1,0 +1,29 @@
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" routerLink="home">Pizza42</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      
+      <a class="nav-item nav-link active" routerLink="home">Home</a>
+      
+      <a class="nav-item nav-link"
+      *ngIf="!authService.isUserAuthenticated()"
+      routerLink="" (click)="authService.login()">Login</a>  
+
+      <a class="nav-item nav-link"  *ngIf="authService.isUserAuthenticated()" routerLink="/profile">My Profile</a>
+      <a class="nav-item nav-link"  *ngIf="authService.isUserAuthenticated()" routerLink="/order">Order Online</a>
+
+      <a class="nav-item nav-link"
+      *ngIf="authService.isUserAuthenticated()"
+      routerLink="" (click)="authService.logout()">Logout</a>
+
+
+      <a class="nav-item nav-link" href="https://github.com/burakiskender" target="_blank">
+        <i class="fa fa-github"></i>Developer
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="container" role="main">
+  <router-outlet></router-outlet>
+</main>

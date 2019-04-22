@@ -1,0 +1,19 @@
+<h2>Our Menu</h2>
+<hr />
+<div *ngFor="let menuItem of _menu">
+  <div>
+    <img width="25px" src="/assets/pizzas/{{ menuItem | lowercase }}.jpeg" />
+    <span>{{ menuItem }}</span>
+    <input
+    name="selectedItem"
+    type="radio"
+    [checked]="idx === 0"
+    [value]="menuItem"
+    (change)=onSelectionChange(menuItem)
+    [disabled]="!hasUserAccess()"
+  />
+  </div>
+</div>
+<hr />
+<button [disabled]="!hasUserAccess() && !_order.selectedItem"   (click)="placeOrder(_order.selectedItem)">Order Now!</button>
+<small *ngIf="!hasUserAccess()"> * Please verify your email address to order</small>
